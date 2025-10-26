@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import { User } from "../entity/index";
+import { User } from "../entity/User";
 import Encrypt from "../helpers/encrypt.helper";
 
 export class UserService {

@@ -1,17 +1,17 @@
 import "reflect-metadata"
 import { AppDataSource } from "./data-source"
-import { User } from "./entity/index"
+import { User } from "./entity/User"
 import express from "express"
 import {userRouter} from "../src/routes/user.routes"
 import { authRouter } from "./routes/auth.routes"
-
+import { appointmentRouter } from "./routes/appointment.routes"
 const app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 app.use("/api", authRouter);
 app.use("/api", userRouter);
-
+app.use("/api", appointmentRouter)
 
 AppDataSource.initialize().then(async () => {
     app.listen(PORT, () => {

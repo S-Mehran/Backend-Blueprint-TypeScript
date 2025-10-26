@@ -1,4 +1,5 @@
 import { IsString, IsEmail, IsOptional, IsEnum } from "class-validator";
+
 enum userRoles {
   ADMIN = "admin",
   PATIENT = "patient",
