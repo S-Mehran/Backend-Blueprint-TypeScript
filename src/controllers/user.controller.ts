@@ -71,4 +71,6 @@ export class UserController {
     })
     res.status(200).json(updatedUser)
   }
+
 }
+
