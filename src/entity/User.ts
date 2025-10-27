@@ -60,12 +60,12 @@ export class User {
   updatedAt: Date;
 
   @OneToOne(() => Patient, (patient: Patient) => patient.user, {
-    cascade: ["insert"],
+    cascade: ["insert"], eager:true,
   })
   patient: Patient;
 
   @OneToOne(() => Doctor, (doctor: Doctor) => doctor.user, {
-    cascade: ["insert"],
+    cascade: ["insert"], eager:true,
   })
   doctor: Doctor;
 

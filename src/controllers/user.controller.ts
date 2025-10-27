@@ -13,6 +13,15 @@ export class UserController {
     res.json(users);
   }
 
+  static async getUserById(req: Request, res: Response) {
+    const userId = Number(req.params.id)
+    const user = await userRepository.findById(userId)
+    if (!user) {
+      res.status(404).json({message: "User not found"})
+    }
+    res.status(200).json({message: "User Found", details: user})
+  }
+  
   static async createUser(req: Request, res: Response) {
     
     const user = await userRepository.createUser(req.body);
